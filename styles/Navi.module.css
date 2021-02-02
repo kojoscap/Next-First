@@ -1,0 +1,19 @@
+.logo {
+  height: 32px;
+  /* background: rgba(255, 255, 255, 0.3); */
+  color: white;
+  margin: 16px;
+  text-align: center;
+}
+
+.sider_fix {
+  overflow: 'auto';
+  height: '100vh';
+  position: 'fixed';
+  left: 0;
+}
+
+.title {
+  font-size: large;
+  font-weight: bold;
+}

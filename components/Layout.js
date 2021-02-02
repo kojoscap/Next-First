@@ -6,6 +6,7 @@ import { useState } from 'react';
 import styles from '../styles/Layout.module.css';
 import AvatarUser from './AvatarUser';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import SecondTop from './SecondTop';
 
 const { Header, Content } = Layout;
 
@@ -17,11 +18,14 @@ const LayoutNomal = ({ children }) => {
   };
 
   return (
-    <Layout>
+    <Layout style={{ minHeight: '100vh' }}>
       {/* Navigation 부분. */}
       <Navi collapsed={collapsed} />
 
-      <Layout className={styles.siteLayout} style={{ marginLeft: 200 }}>
+      <Layout
+        className={styles.siteLayout}
+        style={collapsed ? { marginLeft: 80 } : { marginLeft: 200 }}
+      >
         {/* Header & Avartar 부분 */}
         <Header className={styles.siteLayoutBackground} style={{ padding: 0 }}>
           {collapsed ? (
@@ -39,8 +43,16 @@ const LayoutNomal = ({ children }) => {
           )}
           <AvatarUser />
         </Header>
+        {/* Breadcrumb 바로가기 부분... */}
+        <SecondTop />
         {/* Content 부분 */}
-        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+        <Content
+          style={{
+            margin: '16px 16px 0',
+            overflow: 'initial',
+            background: 'white',
+          }}
+        >
           <div
             className='site-layout-background'
             style={{ padding: 24, textAlign: 'center' }}
